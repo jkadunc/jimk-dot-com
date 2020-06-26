@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/songs",
+            "lambdaFunction": "getSongs",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "api9a7ff218",
+    "apiName": "api9a7ff218",
+    "functionArns": [
+        {
+            "lambdaFunction": "getSongs"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-jimkdotcom-dev-173714-authRole",
+        "unAuthRoleName": "amplify-jimkdotcom-dev-173714-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "getSongs",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
