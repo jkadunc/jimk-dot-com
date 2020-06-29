@@ -10,6 +10,11 @@
             "StackName": "amplify-jimkdotcom-dev-173714",
             "StackId": "arn:aws:cloudformation:us-west-2:261636680703:stack/amplify-jimkdotcom-dev-173714/2f3859b0-b745-11ea-9840-0a0a0dac92f4",
             "AmplifyAppId": "d3r4747y40p5hm"
+        },
+        "categories": {
+            "auth": {
+                "jimkdotcom04fbf556": {}
+            }
         }
     }
 }

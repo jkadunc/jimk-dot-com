@@ -1,0 +1,7 @@
+{
+    "tableName": "photos",
+    "partitionKeyName": "year",
+    "partitionKeyType": "S",
+    "sortKeyName": "id",
+    "sortKeyType": "S"
+}
