@@ -60,18 +60,18 @@ export default class PhotoGallery extends React.Component<PhotoGalleryProps, Pho
     render(){
         const photoCount = this.state.photos.length;
         if (this.state.isLoaded && photoCount > 0 && this.props.PhotosPerRow > 0){
-            const elements: JSX.Element[] = [];
+            const rows: JSX.Element[] = [];
             
             for (var i = 0;  i < photoCount; i += this.props.PhotosPerRow)
             {
                 const row = this.state.photos.slice(i, i+this.props.PhotosPerRow);
-                elements.push(this.buildRow(row));
+                rows.push(this.buildRow(row));
             }
             //TODO: replace Card Deck w/ https://www.npmjs.com/package/react-image-gallery
             return (
                 <Styling>
                     <CardDeck>
-                        {elements}
+                        {rows}
                     </CardDeck>
                 </Styling>
             );
