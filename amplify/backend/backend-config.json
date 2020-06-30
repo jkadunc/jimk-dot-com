@@ -28,6 +28,11 @@
                     }
                 }
             ]
+        },
+        "songs": {
+            "build": true,
+            "providerPlugin": "awscloudformation",
+            "service": "Lambda"
         }
     },
     "api": {
@@ -38,6 +43,14 @@
                 {
                     "category": "function",
                     "resourceName": "photos",
+                    "attributes": [
+                        "Name",
+                        "Arn"
+                    ]
+                },
+                {
+                    "category": "function",
+                    "resourceName": "songs",
                     "attributes": [
                         "Name",
                         "Arn"

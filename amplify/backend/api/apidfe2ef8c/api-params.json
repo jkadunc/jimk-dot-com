@@ -6,6 +6,13 @@
             "privacy": {
                 "open": true
             }
+        },
+        {
+            "name": "/songs",
+            "lambdaFunction": "songs",
+            "privacy": {
+                "open": true
+            }
         }
     ],
     "resourceName": "apidfe2ef8c",
@@ -13,6 +20,9 @@
     "functionArns": [
         {
             "lambdaFunction": "photos"
+        },
+        {
+            "lambdaFunction": "songs"
         }
     ],
     "privacy": {
@@ -29,6 +39,15 @@
                 "Name",
                 "Arn"
             ]
+        },
+        {
+            "category": "function",
+            "resourceName": "songs",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
         }
-    ]
+    ],
+    "uuid": "cf7d6139"
 }
