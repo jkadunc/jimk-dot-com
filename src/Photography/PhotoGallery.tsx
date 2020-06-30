@@ -1,11 +1,17 @@
 import React from 'react';
-import {Row, CardDeck} from 'react-bootstrap';
-import Photo from './Photo';
-import {Storage} from 'aws-amplify';
+import {Row, Col, CardDeck} from 'react-bootstrap';
+import PhotoView from './PhotoView';
+import {photo} from '../models'
+import {API} from 'aws-amplify';
+import styled from 'styled-components';
+
+const Styling = styled.div`
+    margin-top: 20px;
+`
 
 export type PhotoGalleryState = {
     isLoaded:boolean,
-    photos:Array<string>
+    photos:photo[]
 }
 
 export type PhotoGalleryProps = {
@@ -26,40 +32,24 @@ export default class PhotoGallery extends React.Component<PhotoGalleryProps, Pho
         console.log(result);
     }
 
-    parseListResult(items:any){
-        const promises: Promise<any>[] = [];
-
-        items.forEach((item:any) => {
-            if (item.size > 0){
-                promises.push(this.getItemURL(item));
-            }
-        });
-        return Promise.all(promises);
-    }
-    
-    async getItemURL(item:any)
-    {
-        return await Storage.get(item.key); 
-    }
 
     componentDidMount() {
-
         const newState:PhotoGalleryState = {
             isLoaded: this.state.isLoaded,
             photos: []
         }
 
-        Storage.list('photos/')
-        .then(result => this.parseListResult(result))
-        .then(results => {
-            newState.photos = results;
+        API.get("apidfe2ef8c", "/photos", {})
+        .then(result => {
+            newState.photos = result;
             newState.isLoaded = true;
             this.setState(newState);
         }).catch(result => this.handleListError(result));
+
     }
 
-    buildRow(photos:string[]):JSX.Element {
-        const items = photos.map(item => <Photo imageTitle='Sunset' imageText='this is a good sunset' imageURL={item}/>);
+    buildRow(photos:photo[]):JSX.Element {
+        const items = photos.map(item => <Col> <PhotoView photo={item} /> </Col>);
         return (
             <Row>
                 {items}
@@ -77,11 +67,13 @@ export default class PhotoGallery extends React.Component<PhotoGalleryProps, Pho
                 const row = this.state.photos.slice(i, i+this.props.PhotosPerRow);
                 elements.push(this.buildRow(row));
             }
-
+            //TODO: replace Card Deck w/ https://www.npmjs.com/package/react-image-gallery
             return (
-                <CardDeck>
-                {elements}
-                </CardDeck>
+                <Styling>
+                    <CardDeck>
+                        {elements}
+                    </CardDeck>
+                </Styling>
             );
         }
         else

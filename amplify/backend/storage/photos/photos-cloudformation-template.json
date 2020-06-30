@@ -12,13 +12,6 @@
             "Type": "String"
         },
         
-        "sortKeyName": {
-            "Type": "String"
-        },
-        "sortKeyType": {
-            "Type": "String"
-        },
-        
         "tableName": {
             "Type": "String"
         }
@@ -42,24 +35,14 @@
                   {
                       "AttributeName": "id",
                       "AttributeType": "S"
-                  }  , 
-                  
-                  {
-                      "AttributeName": "year",
-                      "AttributeType": "S"
                   } 
                   
                 ],
                 "KeySchema": [
                   
                   {
-                    "AttributeName": "year",
-                    "KeyType": "HASH"
-                  }  , 
-                  
-                  {
                     "AttributeName": "id",
-                    "KeyType": "RANGE"
+                    "KeyType": "HASH"
                   } 
                   
                 ],
@@ -127,17 +110,6 @@
         "PartitionKeyType": {
             "Value": {
                 "Ref": "partitionKeyType"
-            }
-        },
-        
-        "SortKeyName": {
-            "Value": {
-                "Ref": "sortKeyName"
-            }
-        },
-        "SortKeyType": {
-            "Value": {
-                "Ref": "sortKeyType"
             }
         },
         

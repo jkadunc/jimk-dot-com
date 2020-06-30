@@ -1,28 +1,23 @@
 {
     "storage": {
-        "s3cf118d22": {
-            "service": "S3",
+        "photos": {
+            "service": "DynamoDB",
             "providerPlugin": "awscloudformation"
         },
-        "dynamo55f40bd0": {
-            "service": "DynamoDB",
+        "content": {
+            "service": "S3",
             "providerPlugin": "awscloudformation"
         }
     },
     "function": {
-        "jimkdotcom10cf0745": {
-            "build": true,
-            "providerPlugin": "awscloudformation",
-            "service": "Lambda"
-        },
-        "jimkdotcomb24557c0": {
+        "photos": {
             "build": true,
             "providerPlugin": "awscloudformation",
             "service": "Lambda",
             "dependsOn": [
                 {
                     "category": "storage",
-                    "resourceName": "dynamo55f40bd0",
+                    "resourceName": "photos",
                     "attributes": [
                         "Name",
                         "Arn"
@@ -36,21 +31,13 @@
         }
     },
     "api": {
-        "apiad7fa258": {
+        "apidfe2ef8c": {
             "service": "API Gateway",
             "providerPlugin": "awscloudformation",
             "dependsOn": [
                 {
                     "category": "function",
-                    "resourceName": "jimkdotcom10cf0745",
-                    "attributes": [
-                        "Name",
-                        "Arn"
-                    ]
-                },
-                {
-                    "category": "function",
-                    "resourceName": "jimkdotcomb24557c0",
+                    "resourceName": "photos",
                     "attributes": [
                         "Name",
                         "Arn"
@@ -60,11 +47,21 @@
         }
     },
     "auth": {
-        "jimkdotcom04fbf556": {
+        "jimkdotcome26764ad": {
             "service": "Cognito",
             "providerPlugin": "awscloudformation",
-            "dependsOn": [],
-            "customAuth": false
+            "dependsOn": []
+        }
+    },
+    "hosting": {
+        "S3AndCloudFront": {
+            "service": "S3AndCloudFront",
+            "providerPlugin": "awscloudformation"
+        },
+        "amplifyhosting": {
+            "service": "amplifyhosting",
+            "providerPlugin": "awscloudformation",
+            "type": "manual"
         }
     }
 }

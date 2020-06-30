@@ -9,6 +9,14 @@
 		},
 		"env": {
 			"Type": "String"
+		},
+		"storagephotosName": {
+			"Type": "String",
+			"Default": "storagephotosName"
+		},
+		"storagephotosArn": {
+			"Type": "String",
+			"Default": "storagephotosArn"
 		}
 	},
 	"Conditions": {
@@ -33,12 +41,12 @@
 				"FunctionName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"song_search",
+						"photos",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"song_search",
+									"photos",
 									"-",
 									{
 										"Ref": "env"
@@ -67,8 +75,8 @@
 				"Runtime": "nodejs12.x",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "amplify-jimkdotcom-dev-173714-deployment",
-					"S3Key": "amplify-builds/jimkdotcom10cf0745-52365175574670635633-build.zip"
+					"S3Bucket": "amplify-jimkdotcom-dev-123929-deployment",
+					"S3Key": "amplify-builds/photos-6d3730706e7676656170-build.zip"
 				}
 			}
 		},
@@ -78,12 +86,12 @@
 				"RoleName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"jimkdotcomLambdaRolebd5bb274",
+						"jimkdotcomLambdaRole85120a7b",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"jimkdotcomLambdaRolebd5bb274",
+									"jimkdotcomLambdaRole85120a7b",
 									"-",
 									{
 										"Ref": "env"
@@ -149,6 +157,34 @@
 									}
 								]
 							}
+						},
+						{
+							"Effect": "Allow",
+							"Action": [
+								"dynamodb:DescribeTable",
+								"dynamodb:GetItem",
+								"dynamodb:Query",
+								"dynamodb:Scan",
+								"dynamodb:PutItem",
+								"dynamodb:UpdateItem",
+								"dynamodb:DeleteItem"
+							],
+							"Resource": [
+								{
+									"Ref": "storagephotosArn"
+								},
+								{
+									"Fn::Join": [
+										"/",
+										[
+											{
+												"Ref": "storagephotosArn"
+											},
+											"index/*"
+										]
+									]
+								}
+							]
 						}
 					]
 				}
