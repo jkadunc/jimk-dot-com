@@ -78,7 +78,6 @@ export default class PhotoGallery extends React.Component<PhotoGalleryProps, Pho
         }
         else
         {return null;}
-
     }
 }
 

@@ -8,7 +8,7 @@ See the License for the specific language governing permissions and limitations 
 
 
 
-
+const AWS = require('aws-sdk');
 var express = require('express')
 var bodyParser = require('body-parser')
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
@@ -25,13 +25,32 @@ app.use(function(req, res, next) {
   next()
 });
 
+const region = process.env.AWS_REGION; 
+var spotifyClientId;
+var spotifyClientSecret;
+
+const secretsClient = new AWS.SecretsManager({region:region});
+
+secretsClient.getSecretValue({SecretId: 'spotify_api_credential'}, function(err, data){
+  if (err){
+    console.log(err);
+  }
+  else {
+    const spotifyCredentials = JSON.parse(data.SecretString);
+    spotifyClientId = spotifyCredentials.client_id;
+    console.log(spotifyClientId.length);
+    spotifyClientSecret = spotifyCredentials.client_secret;
+    console.log(spotifyClientSecret.length);
+  }
+});
+
 
 /**********************
  GET methods
  **********************/
 app.get('/songs/search', function(req, res) {
   //TODO: add integration to spotify API to search for songs
-  res.json({success: 'get call succeed!', url: req.url});
+
 });
 
 app.get('/songs', function(req, res) {

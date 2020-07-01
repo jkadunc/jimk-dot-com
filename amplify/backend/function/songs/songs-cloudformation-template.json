@@ -68,7 +68,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-jimkdotcom-dev-123929-deployment",
-					"S3Key": "amplify-builds/songs-6958797662336f67546a-build.zip"
+					"S3Key": "amplify-builds/songs-58455450464d75313541-build.zip"
 				}
 			}
 		},
@@ -145,6 +145,25 @@
 										},
 										"lambda": {
 											"Ref": "LambdaFunction"
+										}
+									}
+								]
+							}
+						},
+						{
+							"Effect": "Allow",
+							"Action": [
+								"secretsmanager:GetSecretValue"
+							],
+							"Resource": {
+								"Fn::Sub": [
+									"arn:aws:secretsmanager:${region}:${account}:secret:*",
+									{
+										"region": {
+											"Ref": "AWS::Region"
+										},
+										"account": {
+											"Ref": "AWS::AccountId"
 										}
 									}
 								]
