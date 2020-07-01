@@ -12,6 +12,7 @@ const AWS = require('aws-sdk');
 var express = require('express')
 var bodyParser = require('body-parser')
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+var axios = require('axios').default;
 
 // declare a new express app
 var app = express()
@@ -26,31 +27,42 @@ app.use(function(req, res, next) {
 });
 
 const region = process.env.AWS_REGION; 
-var spotifyClientId;
-var spotifyClientSecret;
+
+var spotifyCredentials;
 
 const secretsClient = new AWS.SecretsManager({region:region});
 
-secretsClient.getSecretValue({SecretId: 'spotify_api_credential'}, function(err, data){
-  if (err){
-    console.log(err);
-  }
-  else {
-    const spotifyCredentials = JSON.parse(data.SecretString);
-    spotifyClientId = spotifyCredentials.client_id;
-    console.log(spotifyClientId.length);
-    spotifyClientSecret = spotifyCredentials.client_secret;
-    console.log(spotifyClientSecret.length);
-  }
-});
+function getSecrets(){
+  return new Promise((resolve, reject) => {
+    secretsClient.getSecretValue({SecretId: 'spotify_api_credential'}, function(err, data){
+      if (err){
+        reject(err);
+      }
+      else {
+        spotifyCredentials = JSON.parse(data.SecretString);
+        resolve(spotifyCredentials);
+      }
+    });
+  });
+}
 
 
 /**********************
  GET methods
  **********************/
-app.get('/songs/search', function(req, res) {
+app.get('/songs/search', async function(req, res) {
   //TODO: add integration to spotify API to search for songs
+  if (!spotifyCredentials) await getSecrets();
 
+
+});
+
+app.get('/songs/debug', async function(req, res){
+  if (!spotifyCredentials) await getSecrets();
+  res.json({
+    id_len: spotifyCredentials.client_id.length,
+    sec_len: spotifyCredentials.client_secret.length
+  });
 });
 
 app.get('/songs', function(req, res) {
