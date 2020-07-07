@@ -1,13 +1,12 @@
 import React from 'react';
-import {Row, Col, CardDeck} from 'react-bootstrap';
-import PhotoView from './PhotoView';
+// import PhotoView from './PhotoView';
 import {photo} from '../models'
 import {API} from 'aws-amplify';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-const Styling = styled.div`
-    margin-top: 20px;
-`
+// const Styling = styled.div`
+//     margin-top: 20px;
+// `
 
 export type PhotoGalleryState = {
     isLoaded:boolean,
@@ -48,36 +47,38 @@ export default class PhotoGallery extends React.Component<PhotoGalleryProps, Pho
 
     }
 
-    buildRow(photos:photo[]):JSX.Element {
-        const items = photos.map(item => <Col> <PhotoView photo={item} /> </Col>);
-        return (
-            <Row>
-                {items}
-            </Row>
-        );
-    }
+    // buildRow(photos:photo[]):JSX.Element {
+    //     const items = photos.map(item => <Col> <PhotoView photo={item} /> </Col>);
+    //     return (
+    //         <Row>
+    //             {items}
+    //         </Row>
+    //     );
+    // }
 
-    render(){
-        const photoCount = this.state.photos.length;
-        if (this.state.isLoaded && photoCount > 0 && this.props.PhotosPerRow > 0){
-            const rows: JSX.Element[] = [];
+    // render(){
+    //     const photoCount = this.state.photos.length;
+    //     if (this.state.isLoaded && photoCount > 0 && this.props.PhotosPerRow > 0){
+    //         const rows: JSX.Element[] = [];
             
-            for (var i = 0;  i < photoCount; i += this.props.PhotosPerRow)
-            {
-                const row = this.state.photos.slice(i, i+this.props.PhotosPerRow);
-                rows.push(this.buildRow(row));
-            }
-            //TODO: replace Card Deck w/ https://www.npmjs.com/package/react-image-gallery
-            return (
-                <Styling>
-                    <CardDeck>
-                        {rows}
-                    </CardDeck>
-                </Styling>
-            );
-        }
-        else
-        {return null;}
-    }
+    //         for (var i = 0;  i < photoCount; i += this.props.PhotosPerRow)
+    //         {
+    //             const row = this.state.photos.slice(i, i+this.props.PhotosPerRow);
+    //             rows.push(this.buildRow(row));
+    //         }
+    //         //TODO: replace Card Deck w/ https://www.npmjs.com/package/react-image-gallery
+    //         return (
+    //             <Styling>
+    //                 <CardDeck>
+    //                     {rows}
+    //                 </CardDeck>
+    //             </Styling>
+    //         );
+    //     }
+    //     else
+    //     {return null;}
+    // }
+
+    render(){return (<p>coming soon</p>);}
 }
 

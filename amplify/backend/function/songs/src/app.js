@@ -26,13 +26,11 @@ app.use(function(req, res, next) {
   next()
 });
 
-const region = process.env.AWS_REGION; 
-
 var spotifyCredentials;
+var spotifyToken;
 
-const secretsClient = new AWS.SecretsManager({region:region});
-
-function getSecrets(){
+async function getSpotifyCredentials(){
+  const secretsClient = new AWS.SecretsManager({region:process.env.AWS_REGION});
   return new Promise((resolve, reject) => {
     secretsClient.getSecretValue({SecretId: 'spotify_api_credential'}, function(err, data){
       if (err){
@@ -46,24 +44,84 @@ function getSecrets(){
   });
 }
 
+async function getSpotifyToken(){
+  if (!spotifyCredentials) await getSpotifyCredentials();
+
+    const token = await axios({
+      method:'POST',
+      url:'https://accounts.spotify.com/api/token',
+      params: {grant_type:'client_credentials'},
+      auth: {
+        username: spotifyCredentials.client_id, 
+        password: spotifyCredentials.client_secret
+      },
+      headers: {
+        'Accept':'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+  });
+
+  spotifyToken = token.data;
+}
+
 
 /**********************
  GET methods
  **********************/
 app.get('/songs/search', async function(req, res) {
-  //TODO: add integration to spotify API to search for songs
-  if (!spotifyCredentials) await getSecrets();
+  if (!spotifyToken) await getSpotifyToken();
 
-
-});
-
-app.get('/songs/debug', async function(req, res){
-  if (!spotifyCredentials) await getSecrets();
-  res.json({
-    id_len: spotifyCredentials.client_id.length,
-    sec_len: spotifyCredentials.client_secret.length
+  //TODO: need to implement token refresh
+  const tracksResponse = await axios({
+      method:'GET',
+      url:'https://api.spotify.com/v1/search',
+      params: {
+        market: 'us',
+        limit: 10,
+        type: 'track',
+        q: req.query.q
+      },
+      headers: {
+        'Accept':'application/json',
+        'Authorization': 'Bearer ' + spotifyToken.access_token
+      }
   });
+
+
+  if (tracksResponse.status === 200)
+  {
+    const responseData = [];
+    const trackData = tracksResponse.data;
+    trackData.tracks.items.forEach(track => {
+      responseData.push( {
+          uri: track.uri,
+          id: track.id,
+          name: track.name,
+          album: track.album.name,
+          artists: track.artists.map(artist => {
+              return artist.name;
+          })
+      });
+    });
+
+    res.json(responseData);
+  }
+  else
+  {
+    res.statusCode = tracksResponse.status;
+    res.send(tracksResponse);
+  }
+  
 });
+
+
+// app.get('/songs/debug', async function(req, res){
+//   if (!spotifyCredentials) await getSecrets();
+//   res.json({
+//     id_len: spotifyCredentials.client_id.length,
+//     sec_len: spotifyCredentials.client_secret.length
+//   });
+// });
 
 app.get('/songs', function(req, res) {
   //TODO: scan through songs lambda & return top N songs by number of votes

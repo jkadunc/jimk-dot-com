@@ -1,40 +1,70 @@
 import React from 'react';
-import {Container} from 'react-bootstrap';
 import { Route, Switch } from "react-router-dom";
-import NavSection from './NavSection'
-import About from './About/About'
-import PhotoGallery from './Photography/PhotoGallery'
-import styled from 'styled-components';
-import Amplify from 'aws-amplify'
+import NavSection from './NavSection';
+import About from './About/About';
+import PhotoGallery from './Photography/PhotoGallery';
+import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
+import WeddingLanding from './Wedding/WeddingLanding';
+import {ThemeProvider} from '@material-ui/styles';
+import {createMuiTheme} from '@material-ui/core/styles';
+import {CssBaseline} from '@material-ui/core';
 
 Amplify.configure(awsconfig);
 
+const theme = createMuiTheme({
+  palette:{
+    primary: {
+      main: '#fff'
+    },
+    secondary: {
+      main: '#F9B84A'
+    },
+    background: {
+      default: '#000',
+      paper: '#000'
+    },
+    text:{
+      primary: '#fff',
+      secondary: '#F9B84A'
+    }
+  },
+  typography:{
+    fontFamily:  'montserrat, sans-serif',
+    h3: {
+      fontSize: '1.5rem',
+      fontWeight: 'bold',
+      '@media (min-width:850px)': {
+        fontSize: '1.8rem',
+      }
+    },
+    h4: {
+      fontSize: '1.1rem',
+      '@media (min-width:850px)': {
+        fontSize: '1.5rem',
+      }
+    }
+  },
 
-const Header = styled.h1`
-  padding: 10px;
-  text-align: center;
-`;
+});
 
 function App() {
   return (
-      <Container fluid>
-        <Header>James Kadunc</Header>
+  <ThemeProvider theme={theme}>
+      <CssBaseline /> 
         <NavSection/>
-        <Container>
           <Switch>
-            <Route path='/about'>
-              <About/>
-            </Route>
             <Route path='/photography'>
               <PhotoGallery PhotosPerRow={3} />
             </Route>
+            <Route path='/wedding'>
+              <WeddingLanding/>
+            </Route>
             <Route exact path='/'>
-              <h2>Home</h2>
+              <About/>
             </Route>
           </Switch>
-        </Container>
-    </Container>
+      </ThemeProvider>
   );
 }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
 import {photo} from '../models';
 import {Storage} from 'aws-amplify';
 
@@ -44,15 +43,19 @@ export default class PhotoView extends React.Component<PhotoViewProps, PhotoView
         }
     }
 
-    render(){
-        return (
-            <Card>
-                <Card.Img src={this.state.thumbURL}></Card.Img>
-                <Card.Body>
-                    <Card.Title>{this.props.photo.name}</Card.Title>
-                    <Card.Text>{this.props.photo.description}</Card.Text>
-                </Card.Body>
-            </Card>
-        );
+    // render(){
+    //     return (
+    //         <Card>
+    //             <Card.Img src={this.state.thumbURL}></Card.Img>
+    //             <Card.Body>
+    //                 <Card.Title>{this.props.photo.name}</Card.Title>
+    //                 <Card.Text>{this.props.photo.description}</Card.Text>
+    //             </Card.Body>
+    //         </Card>
+    //     );
+
+
+        render(){
+            return (<p>stuff goes here</p>);
     }
 }

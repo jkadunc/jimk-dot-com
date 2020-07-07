@@ -1,0 +1,41 @@
+/* :root {
+    --accent-color: #F9B84A;
+    --wedding-color: #BDE3F6;
+  }
+
+body, a, p{
+    background-color: black;
+    color:white;
+}
+
+a:hover {
+    color:white;
+    text-decoration: none;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+
+.nav-item{
+    padding: 0px 10px;
+    font-size: 30pt;
+}
+
+#wedding-link {
+    color: var(--wedding-color);
+}
+
+
+.nav-item:hover {
+    border-bottom: 2px var(--accent-color) solid;
+}
+
+.site-title{
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+.site-title img {
+    height: 40px;
+} */
