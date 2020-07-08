@@ -2,7 +2,6 @@ import React from 'react';
 // import PhotoView from './PhotoView';
 import {photo} from '../models'
 import {API} from 'aws-amplify';
-// import styled from 'styled-components';
 
 // const Styling = styled.div`
 //     margin-top: 20px;
