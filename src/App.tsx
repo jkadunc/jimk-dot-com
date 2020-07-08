@@ -6,6 +6,7 @@ import PhotoGallery from './Photography/PhotoGallery';
 import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
 import WeddingLanding from './Wedding/WeddingLanding';
+import Resume from './Resume/Resume';
 import {ThemeProvider} from '@material-ui/styles';
 import {createMuiTheme} from '@material-ui/core/styles';
 import {CssBaseline} from '@material-ui/core';
@@ -57,6 +58,9 @@ function App() {
             </Route>
             <Route path='/wedding'>
               <WeddingLanding/>
+            </Route>
+            <Route path='/resume'>
+              <Resume/>
             </Route>
             <Route exact path='/'>
               <About/>
