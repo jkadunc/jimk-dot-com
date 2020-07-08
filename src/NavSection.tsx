@@ -32,22 +32,22 @@ function NavSection() {
     <div style={{ width: '100%', padding: '10px' }}>
       <Box p={1} m={1} display="flex" flexWrap="wrap" justifyContent='space-between' alignItems='baseline'>
         <Box p={1} >
-          <Link component={BrowserLink} to='/'>
+          <Link underline="none" component={BrowserLink} to='/'>
             <Image src='/img/line-angled.svg' alt='' height='35px'></Image>
             <NameText variant='h3' display='inline'>James Kadunc</NameText>
           </Link>
         </Box>
         <Box p={1}>
-          <Link component={BrowserLink} to='/'>
+          <Link underline="none" component={BrowserLink} to='/'>
             <HeaderLinkText variant='h4'>about</HeaderLinkText>
           </Link>
-          <Link component={BrowserLink} to='/resume'>
+          <Link underline="none" component={BrowserLink} to='/resume'>
             <HeaderLinkText variant='h4' >resume</HeaderLinkText>
           </Link>
-          <Link component={BrowserLink} to='/photography'>
+          <Link underline="none" component={BrowserLink} to='/photography'>
             <HeaderLinkText variant='h4'>photography</HeaderLinkText>
           </Link>
-          <Link component={BrowserLink} to='/wedding'>
+          <Link underline="none" component={BrowserLink} to='/wedding'>
             <HeaderLinkText variant='h4'>wedding</HeaderLinkText>
           </Link>
         </Box>
