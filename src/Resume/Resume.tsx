@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
+import { Grid, Container, Typography} from '@material-ui/core';
 
 const aboutText = [
   `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`,
@@ -10,6 +9,7 @@ const aboutText = [
 
 export default function Resume() {
   return (
+    <Container maxWidth='lg'>
      <Grid container>
         <Grid item xs={3} >
             <Grid item xs={12}>
@@ -19,7 +19,7 @@ export default function Resume() {
           </Grid>
           <Grid item xs={12}>
             <Typography variant='h5'>
-                EDUCATIONN
+                EDUCATION
             </Typography>
           </Grid>
           <Grid item xs={12}>
@@ -35,6 +35,7 @@ export default function Resume() {
         </Typography>
         </Grid>
       </Grid>
+      </Container>
   );
 }
 
