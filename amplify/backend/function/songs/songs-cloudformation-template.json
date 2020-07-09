@@ -68,7 +68,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-jimkdotcom-dev-123929-deployment",
-					"S3Key": "amplify-builds/songs-476a4a2b7770632b652b-build.zip"
+					"S3Key": "amplify-builds/songs-7562543851434e50435a-build.zip"
 				}
 			}
 		},

@@ -36,9 +36,6 @@ const getStyles = makeStyles((theme) => ({
     }
 }));
 
-
-//TODO: implement link highlighting for currently loaded page
-
 function NavSection() {
 
   const classes = getStyles();
