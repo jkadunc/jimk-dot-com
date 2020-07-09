@@ -63,6 +63,14 @@ const ResumeContent = [
         },
 
         photography: {
+          photos: [
+            {
+              name: '',
+              description: '',
+              thumbId: '',
+              fullResId: ''
+            }
+          ]
 
         }
   };

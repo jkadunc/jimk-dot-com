@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Grid, Container} from '@material-ui/core';
 import ResumeHeading from './ResumeHeading';
-import ResumeContent from './ResumeContent';
+import ResumeContent from '../siteContent';
 
 
 export default function Resume () {
