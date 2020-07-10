@@ -1,34 +1,6 @@
 {
-	"storage": {
-		"photos": {
-			"service": "DynamoDB",
-			"providerPlugin": "awscloudformation"
-		},
-		"content": {
-			"service": "S3",
-			"providerPlugin": "awscloudformation"
-		}
-	},
+	"storage": {},
 	"function": {
-		"photos": {
-			"build": true,
-			"providerPlugin": "awscloudformation",
-			"service": "Lambda",
-			"dependsOn": [
-				{
-					"category": "storage",
-					"resourceName": "photos",
-					"attributes": [
-						"Name",
-						"Arn"
-					],
-					"attributeEnvMap": {
-						"Name": "TABLE_NAME",
-						"Arn": "TABLE_ARN"
-					}
-				}
-			]
-		},
 		"songs": {
 			"build": true,
 			"providerPlugin": "awscloudformation",
@@ -40,14 +12,6 @@
 			"service": "API Gateway",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [
-				{
-					"category": "function",
-					"resourceName": "photos",
-					"attributes": [
-						"Name",
-						"Arn"
-					]
-				},
 				{
 					"category": "function",
 					"resourceName": "songs",
