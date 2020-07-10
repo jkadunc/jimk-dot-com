@@ -24,12 +24,6 @@ type siteContentType = {
             overview: 'overview',
             education: [
               {
-                institute: 'University of Minnesota',
-                location: 'Minneapolis, MN',
-                period: 'Sept 2006 - May 2007',
-                degree: []
-              },
-              {
                 institute: 'University of Wisconsin',
                 location: 'Madison, WI',
                 period: 'Sept 2007 - Dec 2010',
@@ -43,7 +37,13 @@ type siteContentType = {
                     description: 'Bachelor of Science, Economics'
                   }
                 ]
-              }
+              },
+              {
+                institute: 'University of Minnesota',
+                location: 'Minneapolis, MN',
+                period: 'Sept 2006 - May 2007',
+                degree: []
+              },
             ],
             experience: [
                 {

@@ -31,7 +31,7 @@ const getStyles = makeStyles((theme) => ({
       //textTransform: 'lowercase'
     },
     list: {
-      padding: '10px'
+      paddingBottom: '30px'
     },
     itemIcon: {
       minWidth: '0px',
@@ -122,7 +122,7 @@ function ResumeEducation() {
         <ResumeLineItem content={item.institute} icon='school' key='institute' />
         <ResumeLineItem content={item.location} icon='location' key='location' />
         <ListItem key='degrees' className={classes.listItem}>
-          <List className={classes.list}>
+          <List>
             {item.degree.map((item, index) => 
               <ResumeLineItem content={item.description} icon={item.icon} key={'degree' + index} />
             )}
@@ -146,7 +146,7 @@ function ResumeExperience() {
         <ResumeLineItem content={item.company} icon='company' key='company' />
         <ResumeLineItem content={item.location} icon='location' key='location' />
         <ListItem key='highlights' className={classes.listItem}>
-          <List className={classes.list}>
+          <List>
             {item.highlights.map((item, index) => 
               <ResumeLineItem content={item.description} icon={item.icon} key={'highlights' + index} />
             )}
