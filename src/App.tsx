@@ -10,6 +10,7 @@ import Resume from './Resume/Resume';
 import {ThemeProvider} from '@material-ui/styles';
 import {createMuiTheme, responsiveFontSizes} from '@material-ui/core/styles';
 import {CssBaseline} from '@material-ui/core';
+import Photography from './Photography/Photography';
 
 Amplify.configure(awsconfig);
 
@@ -55,7 +56,8 @@ function App() {
         <NavSection/>
           <Switch>
             <Route path='/photography'>
-              <PhotoGallery PhotosPerRow={3} />
+              {/* <PhotoGallery PhotosPerRow={3} /> */}
+              <Photography />
             </Route>
             <Route path='/wedding'>
               <WeddingLanding/>
