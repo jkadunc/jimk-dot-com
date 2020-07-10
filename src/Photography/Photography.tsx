@@ -10,12 +10,14 @@ export default function Photography(){
     
     const photoData = photos.map(item => ({
         thumbnail: item.thumbUrl,
-        original: item.fullSizeUrl
+        original: item.fullSizeUrl,
+        description: item.description,
+
     }));
 
     return(
         <Container maxWidth='lg'>
-            <ImageGallery items={photoData} />
+            <ImageGallery items={photoData} showFullscreenButton={false} showPlayButton={false} />
         </Container>
     );
 }
