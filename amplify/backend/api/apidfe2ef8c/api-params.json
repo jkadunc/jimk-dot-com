@@ -1,13 +1,6 @@
 {
     "paths": [
         {
-            "name": "/photos",
-            "lambdaFunction": "photos",
-            "privacy": {
-                "open": true
-            }
-        },
-        {
             "name": "/songs",
             "lambdaFunction": "songs",
             "privacy": {
@@ -18,9 +11,6 @@
     "resourceName": "apidfe2ef8c",
     "apiName": "apidfe2ef8c",
     "functionArns": [
-        {
-            "lambdaFunction": "photos"
-        },
         {
             "lambdaFunction": "songs"
         }
@@ -34,14 +24,6 @@
     "dependsOn": [
         {
             "category": "function",
-            "resourceName": "photos",
-            "attributes": [
-                "Name",
-                "Arn"
-            ]
-        },
-        {
-            "category": "function",
             "resourceName": "songs",
             "attributes": [
                 "Name",
@@ -49,5 +31,5 @@
             ]
         }
     ],
-    "uuid": "cf7d6139"
+    "uuid": "3c8aa6e8"
 }
