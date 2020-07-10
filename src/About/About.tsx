@@ -1,27 +1,60 @@
 import React from 'react';
 import {  Container, Grid, Hidden, Typography} from '@material-ui/core';
 import siteContent from '../siteContent'
-
-
+import { makeStyles } from '@material-ui/core/styles';
 
 const content = siteContent.about.content;
 
+
+const getStyles = makeStyles((theme) => ({
+  content: {
+    borderLeft: '3px #F9B84A solid',
+    paddingLeft: '5px'
+  }
+}));
+
+function buildRow (rowNum:number, text:string, image:string){
+
+  const classes = getStyles(); 
+
+  const contentFragement = (
+    <Grid item xs={12} md={8}>
+    <Typography className={classes.content} variant='body1'> 
+      {text}
+    </Typography>
+  </Grid>
+  );
+
+  const imageFragement = (
+    <Hidden smDown>
+    <Grid item md={4}>
+        <img src={image} alt='' height='300px'></img>
+    </Grid>
+  </Hidden>
+  );
+
+  if (rowNum % 2) {
+    // even rows
+    return (<>
+    {contentFragement}
+    {imageFragement}
+    </>);  
+  }
+  else {
+    // odd rows
+    return (<>
+      {imageFragement}
+      {contentFragement}
+    </>);  
+  } 
+}
+
 function About() {
+
   return (
    <Container maxWidth='lg'>
      <Grid container>
-      <Hidden smDown>
-        <Grid item xs={12} md={6}>
-          <Typography variant='h5'>
-            PLACEHOLDER TEXT
-          </Typography>
-        </Grid>
-      </Hidden>
-      <Grid item xs={12} md={6}>
-        <Typography variant='body1'>
-          {siteContent.about[0].}
-        </Typography>
-        </Grid>
+        {content.map((item, index) => buildRow(index, item.text, item.image))}
       </Grid>
    </Container>
   );

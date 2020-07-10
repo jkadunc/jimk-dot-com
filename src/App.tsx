@@ -31,6 +31,7 @@ const theme = createMuiTheme({
   },
   typography:{
     fontFamily:  'montserrat, sans-serif',
+    fontSize: 16,
     h3: {
       fontSize: '1.5rem',
       fontWeight: 'bold',
