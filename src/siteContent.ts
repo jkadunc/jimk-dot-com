@@ -46,38 +46,54 @@ type siteContentType = {
               },
             ],
             experience: [
-                {
-                    title: 'job1',
-                    company: 'university of wisconsin',
-                    location: 'madison, wi',
-                    period: 'dec 2010 - jan 2012',
-                    highlights: [
-                      {
-                        icon: 'flask',
-                        description: 'DID AWESOME STUFF'
-                      },
-                      {
-                        icon: 'chart', 
-                        description: 'DID AWESOME STUFF'
-                      }
-                    ]
-                },
-                {
-                  title: 'job2',
-                  company: 'accenture',
-                  location: 'chicago, il',
-                  period: 'dec 2010 - jan 2012',
-                  highlights: [
-                    {
-                      icon: 'flask',
-                      description: 'DID AWESOME STUFF'
-                    },
-                    {
-                      icon: 'chart', 
-                      description: 'DID AWESOME STUFF'
-                    }
-                  ]
-              }
+              {
+                title: 'Manager, Product Management',
+                company: 'Intuit',
+                location: 'San Diego, CA',
+                period: 'April 2017 - Aug 2020',
+                highlights: [
+                  {
+                    icon: 'flask',
+                    description: 'DID AWESOME STUFF'
+                  },
+                  {
+                    icon: 'chart', 
+                    description: 'DID AWESOME STUFF'
+                  }
+                ]
+              },
+              {
+                title: 'Manager',
+                company: 'Accenture',
+                location: 'Chicago, IL',
+                period: 'Feb 2011 - March 2017',
+                highlights: [
+                  {
+                    icon: 'flask',
+                    description: 'DID AWESOME STUFF'
+                  },
+                  {
+                    icon: 'chart', 
+                    description: 'DID AWESOME STUFF'
+                  }
+                ]
+              },
+              {
+                title: 'job1',
+                company: 'university of wisconsin',
+                location: 'madison, wi',
+                period: 'dec 2010 - jan 2012',
+                highlights: [
+                  {
+                    icon: 'flask',
+                    description: 'DID STUFF'
+                  },
+                  {
+                    icon: 'chart', 
+                    description: 'DID STUFF'
+                  }
+                ]
+              },
             ]
         },
 

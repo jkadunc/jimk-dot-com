@@ -46,9 +46,10 @@ function ResumeLineItem(props:any){
 
   return (
     <ListItem key={props.key} className={classes.listItem}>
+      {props.icon && 
       <ListItemIcon className={classes.itemIcon}>
         <Icon type={props.icon} color='secondary' />  
-      </ListItemIcon>
+      </ListItemIcon>}
     <ListItemText className={classes.listItemText} primary={props.content}/>
     </ListItem>
   );
@@ -78,16 +79,12 @@ export default function Resume () {
 
     return (
       <Container maxWidth='lg'>
-      <Grid container>
-          <Grid item xs={3} >
-            {headings}
-          </Grid>
+        <Grid container>
+          <Grid item xs={3}>{headings}</Grid>
           <Grid item xs={2}></Grid>
-        <Grid item xs={7}>
-            {selectedContent}
-          </Grid>
+          <Grid item xs={7}>{selectedContent}</Grid>
         </Grid>
-        </Container>
+      </Container>
     );
 }
 
@@ -118,7 +115,8 @@ function ResumeEducation() {
   const educationItems = content.education.map((item, index) => 
     <ListItem key={index} className={classes.listItem}>
       <List className={classes.list}>
-        <ResumeLineItem content={item.period} icon='schedule' key='period' />
+        {/* <ResumeLineItem content={item.period} icon='schedule' key='period' /> */}
+        <ResumeLineItem content={item.period} key='period' />
         <ResumeLineItem content={item.institute} icon='school' key='institute' />
         <ResumeLineItem content={item.location} icon='location' key='location' />
         <ListItem key='degrees' className={classes.listItem}>
@@ -142,7 +140,8 @@ function ResumeExperience() {
   const experienceItems = content.experience.map((item, index) => 
     <ListItem key={index} className={classes.listItem}>
       <List className={classes.list}>
-        <ResumeLineItem content={item.period} icon='schedule' key='period' />
+        {/* <ResumeLineItem content={item.period} icon='schedule' key='period' /> */}
+        <ResumeLineItem content={item.period} key='period' />
         <ResumeLineItem content={item.company} icon='company' key='company' />
         <ResumeLineItem content={item.location} icon='location' key='location' />
         <ListItem key='highlights' className={classes.listItem}>
