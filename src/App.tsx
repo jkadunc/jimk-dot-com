@@ -8,12 +8,12 @@ import awsconfig from './aws-exports';
 import WeddingLanding from './Wedding/WeddingLanding';
 import Resume from './Resume/Resume';
 import {ThemeProvider} from '@material-ui/styles';
-import {createMuiTheme} from '@material-ui/core/styles';
+import {createMuiTheme, responsiveFontSizes} from '@material-ui/core/styles';
 import {CssBaseline} from '@material-ui/core';
 
 Amplify.configure(awsconfig);
 
-const theme = createMuiTheme({
+const theme = responsiveFontSizes(createMuiTheme({
   palette:{
     primary: {
       main: '#fff'
@@ -31,22 +31,22 @@ const theme = createMuiTheme({
   },
   typography:{
     fontFamily:  'montserrat, sans-serif',
-    fontSize: 16,
+    //fontSize: 12,
     h3: {
-      fontSize: '1.5rem',
+      //fontSize: '1.5rem',
       fontWeight: 'bold',
       '@media (min-width:850px)': {
-        fontSize: '1.8rem',
+        //fontSize: '1.8rem',
       }
     },
     h4: {
-      fontSize: '1.1rem',
+      //fontSize: '1.1rem',
       '@media (min-width:850px)': {
-        fontSize: '1.5rem',
+        //fontSize: '1.5rem',
       }
     }
   },
-});
+}));
 
 function App() {
   return (

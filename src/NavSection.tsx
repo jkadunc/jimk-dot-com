@@ -50,16 +50,16 @@ function NavSection() {
         </Box>
         <Box p={1}>
           <Link underline="none" component={BrowserLink} to='/'>
-            <Typography className={classes.headerLink} variant='h3'>about</Typography>
+            <Typography className={classes.headerLink} variant='h4'>about</Typography>
           </Link>
           <Link underline="none" component={BrowserLink} to='/resume'>
-            <Typography className={classes.headerLink} variant='h3' >resume</Typography>
+            <Typography className={classes.headerLink} variant='h4' >resume</Typography>
           </Link>
           <Link underline="none" component={BrowserLink} to='/photography'>
-            <Typography className={classes.headerLink} variant='h3'>photography</Typography>
+            <Typography className={classes.headerLink} variant='h4'>photography</Typography>
           </Link>
           <Link underline="none" component={BrowserLink} to='/wedding'>
-            <Typography className={`${classes.weddingHeaderLink} ${classes.headerLink}`} variant='h3'>wedding</Typography>
+            <Typography className={`${classes.weddingHeaderLink} ${classes.headerLink}`} variant='h4'>wedding</Typography>
           </Link>
         </Box>
       </Box>
