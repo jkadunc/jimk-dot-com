@@ -1,15 +1,58 @@
 {
     "dev": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-jimkdotcom-dev-173714-authRole",
-            "UnauthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-dev-173714-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-dev-173714-authRole",
+            "AuthRoleName": "amplify-jimkdotcom-dev-123929-authRole",
+            "UnauthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-dev-123929-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-dev-123929-authRole",
             "Region": "us-west-2",
-            "DeploymentBucketName": "amplify-jimkdotcom-dev-173714-deployment",
-            "UnauthRoleName": "amplify-jimkdotcom-dev-173714-unauthRole",
-            "StackName": "amplify-jimkdotcom-dev-173714",
-            "StackId": "arn:aws:cloudformation:us-west-2:261636680703:stack/amplify-jimkdotcom-dev-173714/2f3859b0-b745-11ea-9840-0a0a0dac92f4",
-            "AmplifyAppId": "d3r4747y40p5hm"
+            "DeploymentBucketName": "amplify-jimkdotcom-dev-123929-deployment",
+            "UnauthRoleName": "amplify-jimkdotcom-dev-123929-unauthRole",
+            "StackName": "amplify-jimkdotcom-dev-123929",
+            "StackId": "arn:aws:cloudformation:us-west-2:261636680703:stack/amplify-jimkdotcom-dev-123929/40c643b0-ba40-11ea-a95c-0a7df06cf190",
+            "AmplifyAppId": "dgl73vyfqutum"
+        },
+        "categories": {
+            "auth": {
+                "jimkdotcome26764ad": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "dgl73vyfqutum",
+                    "type": "manual"
+                }
+            },
+            "function": {
+                "photos": {},
+                "songs": {}
+            }
+        }
+    },
+    "prod": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-jimkdotcom-prod-81426-authRole",
+            "UnauthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-prod-81426-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-prod-81426-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-jimkdotcom-prod-81426-deployment",
+            "UnauthRoleName": "amplify-jimkdotcom-prod-81426-unauthRole",
+            "StackName": "amplify-jimkdotcom-prod-81426",
+            "StackId": "arn:aws:cloudformation:us-west-2:261636680703:stack/amplify-jimkdotcom-prod-81426/0ca041c0-c2c0-11ea-943d-0ac9b2f7624c",
+            "AmplifyAppId": "dgl73vyfqutum"
+        },
+        "categories": {
+            "auth": {
+                "jimkdotcome26764ad": {}
+            },
+            "function": {
+                "photos": {},
+                "songs": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "dgl73vyfqutum",
+                    "type": "manual"
+                }
+            }
         }
     }
 }
