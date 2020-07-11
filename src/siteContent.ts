@@ -1,9 +1,29 @@
-//TODO: add typedef for site content object
 type siteContentType = {
-  
+  about:{
+      content: Array<{text: string, image: string}>
+  },
+  resume:{
+    overview: string,
+    education: Array<{
+        institute: string,
+        period: string,
+        location: string,
+        degree? : Array< {icon?: string, description: string}> 
+    }>,
+    experience: Array<{
+        title: string,
+        company: string,
+        period: string,
+        location: string,
+        highlights: Array< {icon?: string, description: string}> 
+    }>,
+  },
+  photography: {
+    photos: Array <{description: string, thumbUrl: string, fullSizeUrl: string}>
+  }
 }
 
-  const siteContent = {
+  const siteContent:siteContentType = {
         about:{
             content: [
                 {
@@ -100,19 +120,16 @@ type siteContentType = {
         photography: {
           photos: [
             {
-              name: 'PB Pier',
               description: 'PB Pier',
               thumbUrl: '/img/gallery/thumbs/001_1346.jpg',
               fullSizeUrl: '/img/gallery/fullsize/001_1346.jpg'
             },
             {
-              name: 'Balboa Park',
               description: 'Balboa Park',
               thumbUrl: '/img/gallery/thumbs/001_0726-HDR.jpg',
               fullSizeUrl: '/img/gallery/fullsize/001_0726-HDR.jpg'
             },
             {
-              name: 'Rock, Joshua Tree',
               description: 'Rock, Joshua Tree',
               thumbUrl: '/img/gallery/thumbs/001_2840.jpg',
               fullSizeUrl: '/img/gallery/fullsize/001_2840.jpg'
