@@ -8,18 +8,18 @@ type siteContentType = {
         institute: string,
         period: string,
         location: string,
-        degree? : Array< {icon?: string, description: string}> 
+        degree? : Array <{icon?: string, description: string}> 
     }>,
     experience: Array<{
         title: string,
         company: string,
         period: string,
         location: string,
-        highlights: Array< {icon?: string, description: string}> 
+        highlights: Array <{icon?: string, description: string}> 
     }>,
   },
   photography: {
-    photos: Array <{description: string, thumbUrl: string, fullSizeUrl: string}>
+    photos: Array <{description?: string, thumbUrl: string, fullSizeUrl: string}>
   }
 }
 
