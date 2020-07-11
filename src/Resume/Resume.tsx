@@ -119,13 +119,15 @@ function ResumeEducation() {
         <ResumeLineItem content={item.period} key='period' />
         <ResumeLineItem content={item.institute} icon='school' key='institute' />
         <ResumeLineItem content={item.location} icon='location' key='location' />
-        <ListItem key='degrees' className={classes.listItem}>
-          <List>
-            {item.degree.map((item, index) => 
-              <ResumeLineItem content={item.description} icon={item.icon} key={'degree' + index} />
-            )}
-          </List>
-        </ListItem>
+        {item.degree && item.degree.length > 0 && 
+          <ListItem key='degrees' className={classes.listItem}>
+            <List>
+              {item.degree.map((item, index) => 
+                <ResumeLineItem content={item.description} icon={item.icon} key={'degree' + index} />
+              )}
+            </List>
+          </ListItem>
+        }
       </List>
     </ListItem>
   );

@@ -61,8 +61,7 @@ type siteContentType = {
               {
                 institute: 'University of Minnesota',
                 location: 'Minneapolis, MN',
-                period: 'Sept 2006 - May 2007',
-                degree: []
+                period: 'Sept 2006 - May 2007'
               },
             ],
             experience: [
