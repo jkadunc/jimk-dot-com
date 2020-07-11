@@ -35,17 +35,17 @@ function buildRow (rowNum:number, text:string, image:string){
 
   if (rowNum % 2) {
     // even rows
-    return (<>
+    return (<React.Fragment key={rowNum}>
     {contentFragement}
     {imageFragement}
-    </>);  
+    </React.Fragment>);  
   }
   else {
     // odd rows
-    return (<>
+    return (<React.Fragment key={rowNum}>
       {imageFragement}
       {contentFragement}
-    </>);  
+      </React.Fragment>);  
   } 
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container} from '@material-ui/core';
 import ImageGallery from 'react-image-gallery';
-import "react-image-gallery/styles/css/image-gallery.css";
+import './image-gallery.css';
 import siteContent from '../siteContent';
 
 const photos = siteContent.photography.photos;
@@ -12,12 +12,11 @@ export default function Photography(){
         thumbnail: item.thumbUrl,
         original: item.fullSizeUrl,
         description: item.description,
-
     }));
 
     return(
         <Container maxWidth='lg'>
-            <ImageGallery items={photoData} showFullscreenButton={false} showPlayButton={false} />
+            <ImageGallery items={photoData} showFullscreenButton={false} showPlayButton={false}  />
         </Container>
     );
 }
