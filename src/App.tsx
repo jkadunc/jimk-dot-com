@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import NavSection from './NavSection';
 import About from './About/About';
-import PhotoGallery from './Photography/PhotoGallery';
 import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
 import WeddingLanding from './Wedding/WeddingLanding';

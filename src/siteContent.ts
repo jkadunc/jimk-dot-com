@@ -103,19 +103,19 @@ type siteContentType = {
               name: 'PB Pier',
               description: 'PB Pier',
               thumbUrl: '/img/gallery/thumbs/001_1346.jpg',
-              fullSizeUrl: '/img/gallery/fullSize/001_1346.jpg'
+              fullSizeUrl: '/img/gallery/fullsize/001_1346.jpg'
             },
             {
               name: 'Balboa Park',
               description: 'Balboa Park',
               thumbUrl: '/img/gallery/thumbs/001_0726-HDR.jpg',
-              fullSizeUrl: '/img/gallery/fullSize/001_0726-HDR.jpg'
+              fullSizeUrl: '/img/gallery/fullsize/001_0726-HDR.jpg'
             },
             {
               name: 'Rock, Joshua Tree',
               description: 'Rock, Joshua Tree',
               thumbUrl: '/img/gallery/thumbs/001_2840.jpg',
-              fullSizeUrl: '/img/gallery/fullSize/001_2840.jpg'
+              fullSizeUrl: '/img/gallery/fullsize/001_2840.jpg'
             },
           ]
 
