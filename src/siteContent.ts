@@ -119,12 +119,12 @@ type siteContentType = {
         photography: {
           photos: [
             {
-              description: 'PB Pier',
+              description: 'Pier, San Diego',
               thumbUrl: '/img/gallery/thumbs/001_1346.jpg',
               fullSizeUrl: '/img/gallery/fullsize/001_1346.jpg'
             },
             {
-              description: 'Balboa Park',
+              description: 'Building, Balboa Park, San Diego',
               thumbUrl: '/img/gallery/thumbs/001_0726-HDR.jpg',
               fullSizeUrl: '/img/gallery/fullsize/001_0726-HDR.jpg'
             },
@@ -132,6 +132,51 @@ type siteContentType = {
               description: 'Rock, Joshua Tree',
               thumbUrl: '/img/gallery/thumbs/001_2840.jpg',
               fullSizeUrl: '/img/gallery/fullsize/001_2840.jpg'
+            },
+            {
+              description: 'Cactus, Joshua Tree',
+              thumbUrl: '/img/gallery/thumbs/001_2762.jpg',
+              fullSizeUrl: '/img/gallery/fullsize/001_2762.jpg'
+            },
+            {
+              description: 'Bug, San Diego',
+              thumbUrl: '/img/gallery/thumbs/001_3506.jpg',
+              fullSizeUrl: '/img/gallery/fullsize/001_3506.jpg'
+            },
+            {
+              description: 'Girlfriend & Ocotillo, Anza Borrego',
+              thumbUrl: '/img/gallery/thumbs/001_4147.jpg',
+              fullSizeUrl: '/img/gallery/fullsize/001_4147.jpg'
+            },
+            {
+              description: 'Lifeguard Post, Malibu',
+              thumbUrl: '/img/gallery/thumbs/001_5249.jpg',
+              fullSizeUrl: '/img/gallery/fullsize/001_5249.jpg'
+            },
+            {
+              description: 'Road, Death Valley',
+              thumbUrl: '/img/gallery/thumbs/69340001.jpg',
+              fullSizeUrl: '/img/gallery/fullsize/69340001.jpg'
+            },
+            {
+              description: 'Rocks, Death Valley',
+              thumbUrl: '/img/gallery/thumbs/69340003.jpg',
+              fullSizeUrl: '/img/gallery/fullsize/69340003.jpg'
+            },
+            {
+              description: 'Dune, Death Valley',
+              thumbUrl: '/img/gallery/thumbs/DSC00360.jpg',
+              fullSizeUrl: '/img/gallery/fullsize/DSC00360.jpg'
+            },
+            {
+              description: 'Flats, Death Valley',
+              thumbUrl: '/img/gallery/thumbs/DSC00382.jpg',
+              fullSizeUrl: '/img/gallery/fullsize/DSC00382.jpg'
+            },
+            {
+              description: 'Stars, Death Valley',
+              thumbUrl: '/img/gallery/thumbs/001_6550.jpg',
+              fullSizeUrl: '/img/gallery/fullsize/001_6550.jpg'
             },
           ]
 
