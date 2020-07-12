@@ -58,9 +58,9 @@ function NavSection() {
           <Link underline="none" component={BrowserLink} to='/photography'>
             <Typography className={classes.headerLink} variant='h4'>photography</Typography>
           </Link>
-          <Link underline="none" component={BrowserLink} to='/wedding'>
+          {/* <Link underline="none" component={BrowserLink} to='/wedding'>
             <Typography className={`${classes.weddingHeaderLink} ${classes.headerLink}`} variant='h4'>wedding</Typography>
-          </Link>
+          </Link> */}
         </Box>
       </Box>
     </Container>

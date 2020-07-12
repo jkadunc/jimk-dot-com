@@ -4,7 +4,6 @@ import NavSection from './NavSection';
 import About from './About/About';
 import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
-import WeddingLanding from './Wedding/WeddingLanding';
 import Resume from './Resume/Resume';
 import {ThemeProvider} from '@material-ui/styles';
 import {createMuiTheme, responsiveFontSizes} from '@material-ui/core/styles';
@@ -58,9 +57,9 @@ function App() {
               {/* <PhotoGallery PhotosPerRow={3} /> */}
               <Photography />
             </Route>
-            <Route path='/wedding'>
+            {/* <Route path='/wedding'>
               <WeddingLanding/>
-            </Route>
+            </Route> */}
             <Route path='/resume'>
               <Resume/>
             </Route>
