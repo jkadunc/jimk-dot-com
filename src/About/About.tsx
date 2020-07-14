@@ -10,6 +10,9 @@ const getStyles = makeStyles((theme) => ({
   content: {
     borderLeft: '3px #F9B84A solid',
     paddingLeft: '5px'
+  },
+  row: {
+    paddingBottom: '20px'
   }
 }));
 
@@ -28,7 +31,7 @@ function buildRow (rowNum:number, text:string, image:string){
   const imageFragement = (
     <Hidden smDown>
     <Grid item md={4}>
-        <img src={image} alt='' height='300px'></img>
+        <img src={image} alt='' width='80%'></img>
     </Grid>
   </Hidden>
   );
