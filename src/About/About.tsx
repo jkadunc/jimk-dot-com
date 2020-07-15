@@ -8,7 +8,7 @@ const content = siteContent.about.content;
 
 const getStyles = makeStyles((theme) => ({
   content: {
-    borderLeft: '3px #F9B84A solid',
+    borderLeft: `2px solid ${theme.palette.secondary.main}`,
     paddingLeft: '5px'
   },
   row: {

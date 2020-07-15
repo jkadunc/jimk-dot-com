@@ -13,7 +13,7 @@ const getStyles = makeStyles((theme) => ({
     headerLink: {
       verticalAlign: 'middle',
       '&:hover' : {
-        borderBottom: '2px #F9B84A solid'
+        borderBottom: `2px solid ${theme.palette.secondary.main}`
       },
       padding: '0px 5px',
       margin: '0px 10px',

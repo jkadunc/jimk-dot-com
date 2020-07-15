@@ -17,7 +17,7 @@ const getStyles = makeStyles((theme) => ({
       margin: '50px 0px',
       textTransform: 'uppercase',
       '&:hover' : {
-        borderLeft: '2px #F9B84A solid',
+        borderLeft: `2px solid ${theme.palette.secondary.main}`,
         paddingLeft: '10px' 
       },
     },
@@ -45,7 +45,7 @@ function ResumeLineItem(props:any){
   const classes = getStyles();
 
   return (
-    <ListItem key={props.key} className={classes.listItem}>
+    <ListItem key={props.id} className={classes.listItem}>
       {props.icon && 
       <ListItemIcon className={classes.itemIcon}>
         <Icon type={props.icon} color='secondary' />  
@@ -116,14 +116,14 @@ function ResumeEducation() {
     <ListItem key={index} className={classes.listItem}>
       <List className={classes.list}>
         {/* <ResumeLineItem content={item.period} icon='schedule' key='period' /> */}
-        <ResumeLineItem content={item.period} key='period' />
-        <ResumeLineItem content={item.institute} icon='school' key='institute' />
-        <ResumeLineItem content={item.location} icon='location' key='location' />
+        <ResumeLineItem content={item.period} id='period' key='period' />
+        <ResumeLineItem content={item.institute} icon='school' id='institute' key='institute' />
+        <ResumeLineItem content={item.location} icon='location' id='location' key='location'  />
         {item.degree && item.degree.length > 0 && 
           <ListItem key='degrees' className={classes.listItem}>
             <List>
               {item.degree.map((item, index) => 
-                <ResumeLineItem content={item.description} icon={item.icon} key={'degree' + index} />
+                <ResumeLineItem content={item.description} icon={item.icon} id={'degree' + index} key={'degree' + index} />
               )}
             </List>
           </ListItem>
@@ -143,13 +143,13 @@ function ResumeExperience() {
     <ListItem key={index} className={classes.listItem}>
       <List className={classes.list}>
         {/* <ResumeLineItem content={item.period} icon='schedule' key='period' /> */}
-        <ResumeLineItem content={item.period} key='period' />
-        <ResumeLineItem content={item.company} icon='company' key='company' />
-        <ResumeLineItem content={item.location} icon='location' key='location' />
+        <ResumeLineItem content={item.period} id='period' key='period'/>
+        <ResumeLineItem content={item.company} icon='company' id='company' key='company' />
+        <ResumeLineItem content={item.location} icon='location' id='location' key='location'/>
         <ListItem key='highlights' className={classes.listItem}>
           <List>
             {item.highlights.map((item, index) => 
-              <ResumeLineItem content={item.description} icon={item.icon} key={'highlights' + index} />
+              <ResumeLineItem content={item.description} icon={item.icon} id={'highlights' + index} key={'highlights' + index} />
             )}
           </List>
         </ListItem>
