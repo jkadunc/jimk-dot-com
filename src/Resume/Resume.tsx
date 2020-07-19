@@ -86,6 +86,7 @@ export default function Resume () {
           <Grid item xs={2}></Grid>
           <Grid item xs={7}>{selectedContent}</Grid>
         </Grid>
+        <a href='Resume - James Kadunc.pdf' download>Download a Copy</a>
       </Container>
     );
 }
