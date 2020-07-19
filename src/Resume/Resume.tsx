@@ -88,7 +88,7 @@ export default function Resume() {
 					{selectedContent}
 				</Grid>
 			</Grid>
-			<a href='Resume.pdf' download>
+			<a href='Resume - James Kadunc.pdf' download>
 				Download a Copy
 			</a>
 		</Container>
