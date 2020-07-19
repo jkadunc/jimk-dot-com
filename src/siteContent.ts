@@ -69,47 +69,50 @@ const siteContent: siteContentType = {
 				title: "Manager, Product Management",
 				company: "Intuit",
 				location: "San Diego, CA",
-				period: "April 2017 - Aug 2020",
+				period: "April 2017 - today",
 				highlights: [
 					{
-						icon: "flask",
-						description: "DID AWESOME STUFF",
+						icon: "people",
+						description:
+							"Led team of 4 product managers accountable for the complete CRM experience for Intuit’s 20,000 customer service agents.",
 					},
 					{
-						icon: "chart",
-						description: "DID AWESOME STUFF",
+						icon: "money",
+						description:
+							"Drove initiative to simplify service agent’s core CRM experience, leading to $8M/year in savings via reduced call handle time.",
+					},
+					{
+						icon: "speed",
+						description:
+							"Championed effort to componentize CRM UI, resulting in a 40% decrease in development time for new experiences.",
 					},
 				],
 			},
 			{
-				title: "Manager",
+				title: "Technology Consulting Manager",
 				company: "Accenture",
 				location: "Chicago, IL",
 				period: "Feb 2011 - March 2017",
 				highlights: [
 					{
-						icon: "flask",
-						description: "DID AWESOME STUFF",
+						icon: "calculator",
+						description:
+							"For an international fintech company, led team of 3 consultants developing method for estimating effect of agent workflow improvements on key customer experience metrics (e.g. hold time, call handle time, NPS).",
 					},
 					{
-						icon: "chart",
-						description: "DID AWESOME STUFF",
+						icon: "people",
+						description:
+							"For a Fortune 50 technology company, led a team of 7 developers and 2 consultants on CRM / ecommerce transformation targeting increased contract renewal rate via new partner quoting and selling experience for $400M/year in sales.",
 					},
-				],
-			},
-			{
-				title: "job1",
-				company: "university of wisconsin",
-				location: "madison, wi",
-				period: "dec 2010 - jan 2012",
-				highlights: [
 					{
 						icon: "flask",
-						description: "DID STUFF",
+						description:
+							"For a Fortune 500 chemical distributor, designed and developed integrated supply / demand planning solution targeting improvements in forecast accuracy for product lines constituting $2.5B/year in sales.",
 					},
 					{
-						icon: "chart",
-						description: "DID STUFF",
+						icon: "cart",
+						description:
+							"For a Fortune 50 retailer, designed and built training for E-commerce order fulfillment system aimed at lowering order fulfillment cost via optimization of existing distribution infrastructure.",
 					},
 				],
 			},

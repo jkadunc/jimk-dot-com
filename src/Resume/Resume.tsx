@@ -42,14 +42,16 @@ const getStyles = makeStyles((theme) => ({
 function ResumeLineItem(props: any) {
 	const classes = getStyles();
 
+	const { id, icon, content } = props;
+
 	return (
-		<ListItem key={props.id} className={classes.listItem}>
+		<ListItem key={id} className={classes.listItem}>
 			{props.icon && (
 				<ListItemIcon className={classes.itemIcon}>
-					<Icon type={props.icon} color='secondary' />
+					<Icon type={icon} color='secondary' />
 				</ListItemIcon>
 			)}
-			<ListItemText className={classes.listItemText} primary={props.content} />
+			<ListItemText className={classes.listItemText} primary={content} />
 		</ListItem>
 	);
 }
@@ -86,6 +88,9 @@ export default function Resume() {
 					{selectedContent}
 				</Grid>
 			</Grid>
+			<a href='Resume - James Kadunc.pdf' download>
+				Download a Copy
+			</a>
 		</Container>
 	);
 }
