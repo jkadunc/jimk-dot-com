@@ -1,20 +1,20 @@
 {
     "dev": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-jimkdotcom-dev-123929-authRole",
-            "UnauthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-dev-123929-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-dev-123929-authRole",
+            "AuthRoleName": "amplify-jimkdotcom-dev-150040-authRole",
+            "UnauthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-dev-150040-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-dev-150040-authRole",
             "Region": "us-west-2",
-            "DeploymentBucketName": "amplify-jimkdotcom-dev-123929-deployment",
-            "UnauthRoleName": "amplify-jimkdotcom-dev-123929-unauthRole",
-            "StackName": "amplify-jimkdotcom-dev-123929",
-            "StackId": "arn:aws:cloudformation:us-west-2:261636680703:stack/amplify-jimkdotcom-dev-123929/40c643b0-ba40-11ea-a95c-0a7df06cf190",
-            "AmplifyAppId": "dgl73vyfqutum"
+            "DeploymentBucketName": "amplify-jimkdotcom-dev-150040-deployment",
+            "UnauthRoleName": "amplify-jimkdotcom-dev-150040-unauthRole",
+            "StackName": "amplify-jimkdotcom-dev-150040",
+            "StackId": "arn:aws:cloudformation:us-west-2:261636680703:stack/amplify-jimkdotcom-dev-150040/75922150-cad4-11ea-ab7c-066798daf74a",
+            "AmplifyAppId": "drsbwsziy4j68"
         },
         "categories": {
             "hosting": {
                 "amplifyhosting": {
-                    "appId": "dgl73vyfqutum",
+                    "appId": "drsbwsziy4j68",
                     "type": "manual"
                 }
             }
@@ -22,27 +22,20 @@
     },
     "prod": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-jimkdotcom-prod-81426-authRole",
-            "UnauthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-prod-81426-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-prod-81426-authRole",
+            "AuthRoleName": "amplify-jimkdotcom-prod-150902-authRole",
+            "UnauthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-prod-150902-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::261636680703:role/amplify-jimkdotcom-prod-150902-authRole",
             "Region": "us-west-2",
-            "DeploymentBucketName": "amplify-jimkdotcom-prod-81426-deployment",
-            "UnauthRoleName": "amplify-jimkdotcom-prod-81426-unauthRole",
-            "StackName": "amplify-jimkdotcom-prod-81426",
-            "StackId": "arn:aws:cloudformation:us-west-2:261636680703:stack/amplify-jimkdotcom-prod-81426/0ca041c0-c2c0-11ea-943d-0ac9b2f7624c",
-            "AmplifyAppId": "dgl73vyfqutum"
+            "DeploymentBucketName": "amplify-jimkdotcom-prod-150902-deployment",
+            "UnauthRoleName": "amplify-jimkdotcom-prod-150902-unauthRole",
+            "StackName": "amplify-jimkdotcom-prod-150902",
+            "StackId": "arn:aws:cloudformation:us-west-2:261636680703:stack/amplify-jimkdotcom-prod-150902/a0c7e0c0-cad5-11ea-9637-06b7c09dad0c",
+            "AmplifyAppId": "drsbwsziy4j68"
         },
         "categories": {
-            "auth": {
-                "jimkdotcome26764ad": {}
-            },
-            "function": {
-                "photos": {},
-                "songs": {}
-            },
             "hosting": {
                 "amplifyhosting": {
-                    "appId": "dgl73vyfqutum",
+                    "appId": "drsbwsziy4j68",
                     "type": "manual"
                 }
             }
